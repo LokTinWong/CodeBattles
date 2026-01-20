@@ -33,7 +33,7 @@ export function StartMenu({ emitJoinRoom, connected }: StartMenuProps) {
     <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
       <div className="max-w-md w-full p-8">
         <div className="text-center mb-8">
-          <h1 className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-500 to-red-500 bg-clip-text text-transparent">
             CodeBattles
           </h1>
           <p className="text-gray-400">Speed Coding Party Game</p>
@@ -58,7 +58,7 @@ export function StartMenu({ emitJoinRoom, connected }: StartMenuProps) {
 
           <div>
             <label htmlFor="roomCode" className="block text-sm font-medium mb-2">
-              Room Code
+              Room Code (feature not implemented)
             </label>
             <input
               id="roomCode"
@@ -66,8 +66,8 @@ export function StartMenu({ emitJoinRoom, connected }: StartMenuProps) {
               value={roomCode}
               onChange={(e) => setRoomCode(e.target.value.toUpperCase())}
               placeholder="Enter room code"
-              disabled={!connected}
-              className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 text-white disabled:opacity-50"
+              disabled={true} // Change to !connected when feature is implemented
+              className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 text-white disabled:opacity-50 disabled:cursor-not-allowed"
             />
           </div>
 
@@ -85,6 +85,11 @@ export function StartMenu({ emitJoinRoom, connected }: StartMenuProps) {
             Join Game
           </button>
         </form>
+
+        <div className="text-center mt-4">
+          <p className="text-gray-400">Base game is made by Github users LokTinWong, moromorad, and CrimsonBlade7.</p>
+          <p className="text-gray-400 mt-2">Currently solely developed by LokTinWong.</p>
+        </div>
       </div>
     </div>
   )
