@@ -28,7 +28,7 @@ See the **Current Bugs or Additional Information** section for other important n
 
 ## Setup Instructions
 
-Some of the instructions below may be more tailored for Windows users, but note that you can host **CodeBattles** on other operating systems.
+Some of the instructions below may be more tailored for Windows users, but note that you can host or play **CodeBattles** on other operating systems.
 
 ### Prerequisites
 
@@ -62,7 +62,7 @@ Some of the instructions below may be more tailored for Windows users, but note 
    VITE_SOCKET_URL=http://host_ip_address:5000
    ```
 
-   > To find the host's IP address, run `ipconfig` on Command Prompt on the host device and find the line that says `IPv4 Address`.
+   > To find the host's IP address, run `ipconfig` on Command Prompt on the hosting device and find the line that says `IPv4 Address`.
    >
    > It is important that the `VITE_SOCKET_URL` of the host and all connecting players are the same in their `.env` files. You must use the host's IP address for everyone.
 
@@ -165,7 +165,7 @@ Run `Set-ExecutionPolicy RemoteSigned` on Command Prompt, then try `npm install`
 - There are currently 9 different problems.
 - The game host (not the device hosting the backend server, but the player who gets to decide when to start in the game lobby) is the player who types a player name and presses **Join Game** first.
 - There is a **Skip** button on each problem for debugging. Pressing it assumes that the problem is done correctly.
-- There is a **Debug Menu** on the lower right corner. It allows adjusting time remaining or using any rewards/offensive effects.
+- There is a **Debug Menu** on the lower right corner. It allows adjusting time remaining or using any rewards/attacks.
 
 ## Development Tips
 
