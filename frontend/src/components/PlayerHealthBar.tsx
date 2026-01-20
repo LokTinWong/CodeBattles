@@ -11,6 +11,7 @@ export function PlayerHealthBar({ player, isCurrentPlayer }: PlayerHealthBarProp
     ? Math.max(0, Math.floor((player.timerEndTime - Date.now()) / 1000))
     : 0
   const percentage = (timeRemaining / 300) * 100
+  const widthPercent = timeRemaining > 300 ? 100 : Math.max(0, percentage)
   const currentCard = player.cards.find(c => c.id === player.currentProblem)
 
   return (
@@ -33,9 +34,11 @@ export function PlayerHealthBar({ player, isCurrentPlayer }: PlayerHealthBarProp
               ? 'bg-red-500'
               : timeRemaining < 120
                 ? 'bg-yellow-500'
-                : 'bg-green-500'
+                : timeRemaining < 300
+                  ? 'bg-green-500'
+                  : 'bg-gradient-to-r from-green-500 to-blue-500'
             }`}
-          style={{ width: `${Math.max(0, percentage)}%` }}
+          style={{ width: `${Math.max(widthPercent)}%` }}
         />
       </div>
 
