@@ -7,7 +7,7 @@ export function DebugMenu({ onTriggerReward, onClose }: DebugMenuProps) {
     return (
         <div className="fixed bottom-16 right-4 bg-gray-800 border-2 border-purple-500 rounded-lg p-4 shadow-2xl z-50 max-w-xs">
             <div className="flex justify-between items-center mb-3">
-                <h3 className="text-lg font-bold text-purple-400">🐛 Debug Menu</h3>
+                <h3 className="text-lg font-bold text-purple-400">🛠 Debug Menu</h3>
                 <button
                     onClick={onClose}
                     className="text-gray-400 hover:text-white transition-colors text-xl font-bold px-2"

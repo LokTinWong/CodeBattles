@@ -361,7 +361,7 @@ export function GameScreen({ emitSelectCard, emitSubmitSolution, emitPlayerElimi
         className="fixed bottom-4 right-4 z-50 bg-gray-800 p-2 rounded-full border border-gray-700 hover:bg-gray-700 transition-colors shadow-lg"
         title="Toggle Debug Menu"
       >
-        🐛
+        🛠
       </button>
 
       {/* Debug Menu */}

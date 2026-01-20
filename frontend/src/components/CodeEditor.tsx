@@ -37,7 +37,7 @@ export function CodeEditor({ onSubmit, disabled }: CodeEditorProps) {
             className="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg text-sm font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             title="Debug: Auto-complete this card"
           >
-            🐛 Skip
+            ⏩ Skip
           </button>
           <button
             onClick={handleSubmit}
