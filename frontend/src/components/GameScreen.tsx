@@ -81,7 +81,7 @@ export function GameScreen({ emitSelectCard, emitSubmitSolution, emitPlayerElimi
         // Find the card to get the reward info
         const completedCard = currentPlayer?.cards.find(c => c.id === data.cardId)
         const rewardText = completedCard?.reward
-          ? `${completedCard.reward.effect.replace('_', ' ')} ${completedCard.reward.value}s`
+          ? `${completedCard.reward.effect.replace('_time', ' ').replace('_all', '')} ${completedCard.reward.value}s`
           : 'No reward'
 
         // Show celebration overlay
@@ -424,8 +424,8 @@ export function GameScreen({ emitSelectCard, emitSubmitSolution, emitPlayerElimi
 
             {selectedCard.reward && (
               <div className="mb-2">
-                <span className="text-sm px-3 py-1 bg-purple-600/30 text-purple-300 rounded">
-                  Reward: {selectedCard.reward.effect.replace('_', ' ')} {selectedCard.reward.value}s
+                <span className="text-sm px-3 py-1 bg-green-600/30 text-green-300 rounded">
+                  Reward: {selectedCard.reward.effect.replace('_time', ' ').replace('_all', '')} {selectedCard.reward.value}s
                 </span>
               </div>
             )}

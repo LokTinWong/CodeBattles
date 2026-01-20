@@ -49,7 +49,7 @@ export function ProblemCard({ card, isSelected, onSelect, index = 0, isBurning =
             {card.reward && (
               <div className="flex items-center">
                 <span className="text-xs px-2 py-1 bg-green-100 text-green-800 rounded-md font-medium border border-green-200">
-                  🎁 {card.reward.effect.replace('_', ' (')} {card.reward.value}s{')'}
+                  🎁 {card.reward.effect.replace('_time', ' ').replace('_all', '')} {card.reward.value}s
                 </span>
               </div>
             )}
