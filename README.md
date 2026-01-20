@@ -62,20 +62,13 @@ Some of the instructions below may be more tailored for Windows users, but note 
    VITE_SOCKET_URL=http://host_ip_address:5000
    ```
 
-   >To find the host's IP address, run `ipconfig` on Command Prompt on the >host device and find the line that says `IPv4 Address`.
+   > To find the host's IP address, run `ipconfig` on Command Prompt on the host device and find the line that says `IPv4 Address`.
    >
-   >It is important that the `VITE_SOCKET_URL` of the host and all connecting players are the same in their `.env` files. You must use the host's IP address for everyone.
+   > It is important that the `VITE_SOCKET_URL` of the host and all connecting players are the same in their `.env` files. You must use the host's IP address for everyone.
 
    Note that it is normal for different devices to have different IPv4 IP addresses, even if they are connected to the same WiFi.
 
    Note that Git does not track the `.env` file, so each time you clone the repository on a new device, you need to create a new `.env` file.
-
-4. Start the development server:
-   ```bash
-   npm run dev
-   ```
-
-   The frontend will be available at `http://localhost:5173`
 
 ### Backend Setup
 
