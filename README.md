@@ -160,6 +160,7 @@ Run `Set-ExecutionPolicy RemoteSigned` on Command Prompt, then try `npm install`
 
 - **Eventlet** is currently used (not recommended), needs to be migrated to something like `asyncio`.
 - Do not reload the page if a game is ongoing. It interrupts the game for everyone and progress is completely lost. You may safely close your own tab though.
+- Room code does not currently matter. Rooms are not yet implemented.
 - The problem *Container With Most Water* is currently broken.
 - There are currently 9 different problems.
 - The game host (not the device hosting the backend server, but the player who gets to decide when to start in the game lobby) is the player who types a player name and presses **Join Game** first.
