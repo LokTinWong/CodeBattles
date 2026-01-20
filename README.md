@@ -145,7 +145,7 @@ If you can't find your `.env` file (since some IDEs hide it), change directory t
 - Check firewall settings if using a local IP
 
 ### Host can connect but non-host devices cannot
-- Ensure that the WiFi network profile on the host is set to private. Select the WiFi you are connected to, click Properties, and change Network profile to Private.
+- Ensure that the WiFi network profile of the host is set to private. Select the WiFi you are connected to, click Properties, and change Network profile to Private.
 
 ### Multiple players not syncing
 - Verify all clients are connected to the same backend URL
@@ -166,53 +166,16 @@ Run `Set-ExecutionPolicy RemoteSigned` on Command Prompt, then try `npm install`
 - There is a **Skip** button on each problem for debugging. Pressing it assumes that the problem is done correctly.
 - There is a **Debug Menu** on the lower right corner. It allows adjusting time remaining or using any rewards/offensive effects.
 
-## Project Structure
-
-```
-CodeBattles-nwHacks2026/
-├── frontend/
-│   ├── src/
-│   │   ├── store/
-│   │   │   └── gameStore.ts      # Zustand store for game state
-│   │   ├── hooks/
-│   │   │   └── useSocket.ts      # Socket.io connection hook
-│   │   ├── App.tsx               # Main app component
-│   │   ├── main.tsx              # React entry point
-│   │   └── index.css             # Tailwind styles
-│   ├── package.json
-│   ├── vite.config.ts
-│   └── tailwind.config.js
-├── backend/
-│   ├── app.py                    # Flask app with Socket.IO
-│   └── requirements.txt
-└── README.md
-```
-
 ## Socket.IO Events
-
-### Client → Server
-
-- `player_move`: Send player position update
-  ```javascript
-  { playerId: 1, position: { x: 100, y: 200 } }
-  ```
-
-- `player_action`: Send player action
-  ```javascript
-  { playerId: 1, action: 'jump' }
-  ```
-
-- `get_game_state`: Request current game state
 
 ### Server → Client
 
-- `player_move`: Broadcast player position to all clients
-- `player_action`: Broadcast player action to all clients
-- `game_state`: Send full game state (on connect or request)
 - `connect`: Connection established
 - `disconnect`: Connection lost
 
 ## Development Tips
+
+This section is AI generated. Not sponsored by Lok Tin.
 
 - **Hot Reload**: Both frontend (Vite) and backend (Flask debug mode) support hot reload
 - **State Management**: Player positions/actions are stored in Zustand store and synced via Socket.IO
