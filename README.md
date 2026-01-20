@@ -167,13 +167,6 @@ Run `Set-ExecutionPolicy RemoteSigned` on Command Prompt, then try `npm install`
 - There is a **Skip** button on each problem for debugging. Pressing it assumes that the problem is done correctly.
 - There is a **Debug Menu** on the lower right corner. It allows adjusting time remaining or using any rewards/offensive effects.
 
-## Socket.IO Events
-
-### Server → Client
-
-- `connect`: Connection established
-- `disconnect`: Connection lost
-
 ## Development Tips
 
 This section is AI generated. Not sponsored by Lok Tin.
