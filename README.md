@@ -146,6 +146,8 @@ If you can't find your `.env` file (since some IDEs hide it), change directory t
 
 ### Host can connect but non-host devices cannot
 - Ensure that the WiFi network profile of the host is set to private. Select the WiFi you are connected to, click Properties, and change Network profile to Private.
+    - If you are hosting on a device and only playing on that same device, then the network profile does not matter. Meaning, you don't need to set the network profile to private when doing some solo testing, unless if you host and play on different devices.
+    - A private network profile allows different devices connected to the same network to communicate with each other.
 
 ### Multiple players not syncing
 - Verify all clients are connected to the same backend URL
@@ -165,11 +167,12 @@ Run `Set-ExecutionPolicy RemoteSigned` on Command Prompt, then try `npm install`
 - There are currently 9 different problems.
 - The game host (not the device hosting the backend server, but the player who gets to decide when to start in the game lobby) is the player who types a player name and presses **Join Game** first.
 - There is a **Skip** button on each problem for debugging. Pressing it assumes that the problem is done correctly.
-- There is a **Debug Menu** on the lower right corner. It allows adjusting time remaining or using any rewards/attacks.
+- There is a **Debug Menu** on the lower right corner. It allows using any rewards/attacks.
+- You cannot remove time from yourself using the **Debug Menu**.
 
 ## Development Tips
 
-This section is AI generated. Not sponsored by Lok Tin.
+This section is AI-generated. Not sponsored by Lok Tin.
 
 - **Hot Reload**: Both frontend (Vite) and backend (Flask debug mode) support hot reload
 - **State Management**: Player positions/actions are stored in Zustand store and synced via Socket.IO
