@@ -7,19 +7,22 @@ interface TargetPlayer {
 
 interface PlayerSelectionModalProps {
     targets: TargetPlayer[]
+    rewardEffect: string
     rewardValue: number
     onSelect: (targetId: string) => void
 }
 
-export function PlayerSelectionModal({ targets, rewardValue, onSelect }: PlayerSelectionModalProps) {
+export function PlayerSelectionModal({ targets, rewardEffect, rewardValue, onSelect }: PlayerSelectionModalProps) {
     return (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/50">
             <div className="bg-gray-800 text-white rounded-xl p-8 max-w-md w-full mx-4 shadow-2xl border-2 border-purple-500">
                 <div className="text-center mb-6">
                     <h2 className="text-3xl font-bold mb-2">Choose Your Target</h2>
-                    <p className="text-gray-300">
-                        Remove <span className="text-red-400 font-bold">{rewardValue} seconds</span> from an opponent
-                    </p>
+                        {rewardEffect === 'flashbang_targeted' ? (
+                            <p className="text-gray-300">Flashbang an opponent 💥</p>
+                        ) : (
+                            <p className="text-gray-300">Remove <span className="text-red-400 font-bold">{rewardValue} seconds</span> from an opponent</p>
+                        )}
                 </div>
 
                 <div className="space-y-3">
@@ -45,7 +48,7 @@ export function PlayerSelectionModal({ targets, rewardValue, onSelect }: PlayerS
                 </div>
 
                 <p className="text-sm text-gray-400 text-center mt-6">
-                    Click on a player to target them
+                    Click on a player to target them!
                 </p>
             </div>
         </div>

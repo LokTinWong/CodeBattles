@@ -39,8 +39,9 @@ export function GameScreen({ emitSelectCard, emitSubmitSolution, emitPlayerElimi
   const [targetSelection, setTargetSelection] = useState<{
     show: boolean
     targets: Array<{ playerId: string, username: string, timeRemaining: number }>
+    rewardEffect: string
     rewardValue: number
-  }>({ show: false, targets: [], rewardValue: 0 })
+  }>({ show: false, targets: [], rewardEffect: '', rewardValue: 0 })
 
   // Animation state for wave effect
   const [hasAnimated, setHasAnimated] = useState(false)
@@ -123,6 +124,7 @@ export function GameScreen({ emitSelectCard, emitSubmitSolution, emitPlayerElimi
         setTargetSelection({
           show: true,
           targets: data.availableTargets,
+          rewardEffect: data.effect,
           rewardValue: data.value
         })
       }, 2100) // Show after celebration (2s) + small buffer
@@ -195,7 +197,7 @@ export function GameScreen({ emitSelectCard, emitSubmitSolution, emitPlayerElimi
     socket.emit('apply_targeted_debuff', { targetPlayerId: targetId })
 
     // Close modal
-    setTargetSelection({ show: false, targets: [], rewardValue: 0 })
+    setTargetSelection({ show: false, targets: [], rewardEffect: '', rewardValue: 0 })
   }
 
   const handleDebugReward = (rewardType: string) => {
@@ -376,6 +378,7 @@ export function GameScreen({ emitSelectCard, emitSubmitSolution, emitPlayerElimi
       {targetSelection.show && (
         <PlayerSelectionModal
           targets={targetSelection.targets}
+          rewardEffect={targetSelection.rewardEffect}
           rewardValue={targetSelection.rewardValue}
           onSelect={handleTargetSelect}
         />
