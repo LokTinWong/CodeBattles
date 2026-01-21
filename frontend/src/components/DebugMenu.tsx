@@ -20,7 +20,7 @@ export function DebugMenu({ onTriggerReward, onClose }: DebugMenuProps) {
                     onClick={() => onTriggerReward('add_time')}
                     className="w-full px-3 py-2 bg-green-600 hover:bg-green-700 rounded text-sm font-semibold transition-colors"
                 >
-                    ➕ Add Time (Self)
+                    ➕ Add 30s (Self)
                 </button>
 
                 <button
