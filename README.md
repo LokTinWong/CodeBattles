@@ -158,15 +158,15 @@ If you can't find your `.env` file (since some IDEs hide it), change directory t
 
 Run `Set-ExecutionPolicy RemoteSigned` on Command Prompt, then try `npm install` again.
 
-## Current Bugs or Additional Information
+## Current Bugs and Additional Information
 
-- **Eventlet** is currently used (not recommended), needs to be migrated to something like `asyncio`.
+- **Eventlet** is used (not recommended) and should be migrated to something like **asyncio**.
 - Do not reload the page if a game is ongoing. It interrupts the game for everyone and progress is completely lost. You may safely close your own tab though.
-- Room code does not currently matter. Rooms are not yet implemented.
-- The problem *Container With Most Water* is currently broken.
-- There are currently 9 different problems.
+- Room code does not matter. Rooms are not yet implemented.
+- The problem *Container With Most Water* is broken.
+- There are 9 different problems.
 - The game host (not the device hosting the backend server, but the player who gets to decide when to start in the game lobby) is the player who types a player name and presses **Join Game** first.
-- There is a **Skip** button on each problem for debugging. Pressing it assumes that the problem is done correctly.
+- There is a **Skip** button on each problem for debugging. Pressing it assumes that the problem is done correctly and rewards are granted.
 - There is a **Debug Menu** on the lower right corner. It allows using any rewards/attacks.
 - You cannot remove time from yourself using the **Debug Menu**.
 
