@@ -170,6 +170,22 @@ Run `Set-ExecutionPolicy RemoteSigned` on Command Prompt, then try `npm install`
 - There is a **Debug Menu** on the lower right corner. It allows using any rewards/attacks.
 - You cannot remove time from yourself using the **Debug Menu**.
 
+## Changelog
+
+This section will record changes made to the game after the hackathon.
+
+- New title colour
+- Temporarily disabled the room code textbox
+- Fixed overextending health bar
+   - Used to occur when player's remaining time exceeds initial value
+- New health bar colour for when remaining time exceeds initial value 
+- Additional information added in `README.md`
+   - Especially more troubleshooting tips
+- Changed to emojis that better fit the corresponding function throughout the game
+- Adjusted size of problem cards
+- Added descriptions in the target menu that are unique to the effect type
+   - If the effect is `flashbang`, the description is "Flashbang an opponent" instead of "Remove 1 second from an opponent"
+
 ## Development Tips
 
 This section is AI-generated. Not sponsored by Lok Tin.
