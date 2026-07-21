@@ -1,33 +1,37 @@
-import { useState, useEffect } from 'react'
-import { useGameStore } from '../store/gameStore'
+import { useState, useEffect } from "react";
+import { useGameStore } from "../store/gameStore";
 
 interface StartMenuProps {
-  emitJoinRoom: (username: string, roomCode: string) => void
-  connected: boolean
+  emitJoinRoom: (username: string, roomCode: string) => void;
+  connected: boolean;
 }
 
 export function StartMenu({ emitJoinRoom, connected }: StartMenuProps) {
-  const [username, setUsername] = useState('')
-  const [roomCode, setRoomCode] = useState('')
-  const { setUsername: setStoreUsername, joinRoom, gameStatus } = useGameStore()
+  const [username, setUsername] = useState("");
+  const [roomCode, setRoomCode] = useState("");
+  const {
+    setUsername: setStoreUsername,
+    joinRoom,
+    gameStatus,
+  } = useGameStore();
 
   // Navigate to lobby when gameStatus changes to 'lobby'
   useEffect(() => {
-    if (gameStatus === 'lobby') {
+    if (gameStatus === "lobby") {
       // Navigation happens via App.tsx routing
     }
-  }, [gameStatus])
+  }, [gameStatus]);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     if (username.trim() && connected) {
-      setStoreUsername(username.trim())
-      const finalRoomCode = roomCode.trim() || 'ROOM1'
-      joinRoom(finalRoomCode)
+      setStoreUsername(username.trim());
+      const finalRoomCode = roomCode.trim() || "ROOM1";
+      joinRoom(finalRoomCode);
       // Emit join_room event to backend
-      emitJoinRoom(username.trim(), finalRoomCode)
+      emitJoinRoom(username.trim(), finalRoomCode);
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
@@ -39,9 +43,15 @@ export function StartMenu({ emitJoinRoom, connected }: StartMenuProps) {
           <p className="text-gray-400">Speed Coding Party Game</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-gray-800 rounded-lg p-6 space-y-6">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-gray-800 rounded-lg p-6 space-y-6"
+        >
           <div>
-            <label htmlFor="username" className="block text-sm font-medium mb-2">
+            <label
+              htmlFor="username"
+              className="block text-sm font-medium mb-2"
+            >
               Username
             </label>
             <input
@@ -57,7 +67,10 @@ export function StartMenu({ emitJoinRoom, connected }: StartMenuProps) {
           </div>
 
           <div>
-            <label htmlFor="roomCode" className="block text-sm font-medium mb-2">
+            <label
+              htmlFor="roomCode"
+              className="block text-sm font-medium mb-2"
+            >
               Room Code (feature not implemented)
             </label>
             <input
@@ -87,10 +100,30 @@ export function StartMenu({ emitJoinRoom, connected }: StartMenuProps) {
         </form>
 
         <div className="text-center mt-4">
-          <p className="text-gray-400">Base game is made by Github users LokTinWong, moromorad, and CrimsonBlade7.</p>
-          <p className="text-gray-400 mt-2">Currently solely developed by LokTinWong.</p>
+          <p className="text-gray-400">
+            Base game is made by Github users LokTinWong, moromorad, and
+            CrimsonBlade7.
+          </p>
+          <p className="text-gray-400 mt-2">
+            Currently being developed by LokTinWong.
+          </p>
+        </div>
+
+        <div className="text-center mt-4">
+          <button
+            type="button"
+            onClick={() =>
+              window.open(
+                "https://github.com/LokTinWong/CodeBattles#readme",
+                "_blank",
+              )
+            }
+            className="inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors"
+          >
+            Help
+          </button>
         </div>
       </div>
     </div>
-  )
+  );
 }
